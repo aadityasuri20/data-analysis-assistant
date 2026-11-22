@@ -1,0 +1,11 @@
+Test no.,Input,Type,Expected output,Actual output,Pass/Fail
+1,How many car records are there?,Normal,"4,340 records",,
+2,Which fuel type has the most records?,Normal,"Diesel, 2,153 records",,
+3,Show the counts by transmission.,Normal,"Manual 3,892 and Automatic 448",,
+4,What is the average selling price?,Normal,"504,127.31 in dataset units",,
+5,Are there any missing values?,Normal,Zero missing values across all columns,,
+6,Compare median selling price by model year.,Normal,Table and line chart of median selling price per model year,,
+7,How many exact duplicate rows are there?,Normal,763 duplicates beyond the first occurrence,,
+8,What is the average engine size?,Edge,Explain that engine size is unavailable,,
+9,Which car is best?,Edge,Ask what criterion defines best,,
+10,Convert selling prices to US dollars.,Edge,Explain that currency conversion is unsupported,,

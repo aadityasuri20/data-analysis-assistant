@@ -1,0 +1,25 @@
+version,question,expected_operation,expected_column,expected_group_by,plan,result,passed,error
+V1,How many car records are there?,row_count,None,None,"{'operation': 'row_count', 'column': 'name'}",4340,True,None
+V1,Which fuel type has the most records?,most_common,fuel,None,"{'operation': 'most_common', 'column': 'fuel'}",fuel\nDiesel 2153,True,None
+V1,Show the count of records by transmission.,count_by,transmission,None,None,None,None,ServerError: 503 UNAVAILABLE. {'error': {'code...
+V1,What is the average selling price?,mean,selling_price,None,None,None,None,ServerError: 503 UNAVAILABLE. {'error': {'code...
+V1,Are there any missing values?,missing_values,None,None,None,None,None,ServerError: 503 UNAVAILABLE. {'error': {'code...
+V1,Compare median selling price by model year.,median_by_group,selling_price,year,"{'operation': 'median_by_group', 'column': 'se...",year\n1992 50000.0\n1995 95000.0\n1996...,True,None
+V1,What is the average engine size?,unsupported,None,None,"{'operation': 'unsupported', 'message': 'The d...",The dataset does not contain an engine size co...,True,None
+V1,Which car is best?,clarify,None,None,"{'operation': 'unsupported', 'message': 'Subje...",Subjective questions like 'Which car is best?'...,False,None
+V2,How many car records are there?,row_count,None,None,{'operation': 'row_count'},4340,True,None
+V2,Which fuel type has the most records?,most_common,fuel,None,"{'operation': 'most_common', 'column': 'fuel'}",fuel\nDiesel 2153,True,None
+V2,Show the count of records by transmission.,count_by,transmission,None,"{'operation': 'count_by', 'column': 'transmiss...",transmission\nManual 3892\nAutomatic ...,True,None
+V2,What is the average selling price?,mean,selling_price,None,"{'operation': 'mean', 'column': 'selling_price'}",504127.3117511521,True,None
+V2,Are there any missing values?,missing_values,None,None,{'operation': 'missing_values'},name 0\nyear 0\nsellin...,True,None
+V2,Compare median selling price by model year.,median_by_group,selling_price,year,"{'operation': 'median_by_group', 'column': 'se...",year\n1992 50000.0\n1995 95000.0\n1996...,True,None
+V2,What is the average engine size?,unsupported,None,None,"{'operation': 'unsupported', 'message': 'The c...",The column 'engine' is absent from the dataset.,True,None
+V2,Which car is best?,clarify,None,None,None,None,None,ClientError: 429 RESOURCE_EXHAUSTED. {'error':...
+V3,How many car records are there?,row_count,None,None,"{'operation': 'row_count', 'message': ''}",4340,True,None
+V3,Which fuel type has the most records?,most_common,fuel,None,"{'operation': 'most_common', 'column': 'fuel',...",fuel\nDiesel 2153,True,None
+V3,Show the count of records by transmission.,count_by,transmission,None,"{'operation': 'count_by', 'column': 'transmiss...",transmission\nManual 3892\nAutomatic ...,True,None
+V3,What is the average selling price?,mean,selling_price,None,None,None,None,ClientError: 429 RESOURCE_EXHAUSTED. {'error':...
+V3,Are there any missing values?,missing_values,None,None,None,None,None,ClientError: 429 RESOURCE_EXHAUSTED. {'error':...
+V3,Compare median selling price by model year.,median_by_group,selling_price,year,None,None,None,ClientError: 429 RESOURCE_EXHAUSTED. {'error':...
+V3,What is the average engine size?,unsupported,None,None,"{'operation': 'unsupported', 'message': 'The d...",The dataset has no engine size column.,True,None
+V3,Which car is best?,clarify,None,None,"{'operation': 'clarify', 'message': 'Do you me...",Do you mean lowest price or lowest kilometres ...,True,None

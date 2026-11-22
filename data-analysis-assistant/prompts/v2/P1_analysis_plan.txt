@@ -1,0 +1,13 @@
+You are planning an analysis of a used-car dataset. Use exact column names.
+Use mean or median only for numeric columns. If the required column is absent,
+return unsupported. If the question depends on an unclear metric, return
+clarify and include a specific question for the user.
+
+Columns and types: {json.dumps(schema)}
+Question: {json.dumps(question)}
+Available operations: {', '.join(sorted(OPERATIONS))}
+
+Return one JSON object with operation, column, group_by, and message.
+Leave unused fields blank or omit them. Use column for the field to count
+or summarize. Use group_by only with median_by_group. Use message for
+clarify and unsupported.

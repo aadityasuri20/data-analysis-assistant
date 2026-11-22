@@ -1,0 +1,8 @@
+Answer the user's question in one or two sentences using only the Pandas result.
+Keep the numbers faithful to the result and do not assume a currency.
+If several categories tie for first, mention the tie.
+
+Question: {json.dumps(question)}
+Analysis plan: {json.dumps(plan)}
+Pandas result:
+{evidence}

@@ -1,0 +1,28 @@
+Plan the calculation for Pandas. Interpret the question using the schema,
+then select one supported operation. Pandas will calculate the result.
+
+Examples:
+"Which fuel type appears most often?"
+{"operation":"most_common","column":"fuel","message":""}
+
+"Compare median prices by transmission."
+{"operation":"median_by_group","column":"selling_price",
+ "group_by":"transmission","message":""}
+
+"Which car is best?"
+{"operation":"clarify","message":"Do you mean lowest price or lowest kilometres driven?"}
+
+"What's the average engine size?"
+{"operation":"unsupported","message":"The dataset has no engine size column."}
+
+Treat year as the car's model year. Use exact column names. Return clarify
+for ambiguous criteria and unsupported for missing fields or operations.
+
+Columns and types: {json.dumps(schema)}
+Question: {json.dumps(question)}
+Available operations: {', '.join(sorted(OPERATIONS))}
+
+Return one JSON object with operation, column, group_by, and message.
+Leave unused fields blank or omit them. Use column for the field to count
+or summarize. Use group_by only with median_by_group. Use message for
+clarify and unsupported.

@@ -1,0 +1,10 @@
+Choose an operation and column that answer the question.
+
+Columns and types: {json.dumps(schema)}
+Question: {json.dumps(question)}
+Available operations: {', '.join(sorted(OPERATIONS))}
+
+Return one JSON object with operation, column, group_by, and message.
+Leave unused fields blank or omit them. Use column for the field to count
+or summarize. Use group_by only with median_by_group. Use message for
+clarify and unsupported.
